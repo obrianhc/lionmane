@@ -13,16 +13,16 @@ class CreateContactTable extends Migration
      */
     public function up()
     {
-        Schema::create('contacto', function (Blueprint $table) {
-            $table->bigIncrements('idContacto');
+        Schema::create('contactos', function (Blueprint $table) {
+            $table->increments('id');
             $table->string('nombre', 40);
             $table->string('apellido', 40);
             $table->string('apodo', 40)->nullable();
-            $table->datetime('fecha_nac');
+            $table->date('fecha_nac');
             $table->string('genero', 10);
             $table->binary('imagen')->nullable();
-            $table->datetime('fecha_creacion')->default(new date());
-            $table->datetime('fecha_actualizacion');
+            $table->date('fecha_creacion');
+            $table->date('fecha_actualizacion')->nullable();
             $table->integer('deleted')->default(0);
             $table->timestamps();
         });
@@ -35,6 +35,6 @@ class CreateContactTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contacto');
+        Schema::dropIfExists('contactos');
     }
 }

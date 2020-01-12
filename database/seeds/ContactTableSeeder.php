@@ -13,11 +13,12 @@ class ContactTableSeeder extends Seeder
     public function run()
     {
         // Contacto de prueba para verificación de la información
-        DB::table('contacto')->insert([
+        DB::table('contactos')->insert([
             'nombre'=>'Cristopher',
             'apellido'=>'Hernandez',
             'apodo'=>'Cris',
-            'fecha_nac'=>'17/10/1990',
+            'fecha_nac'=>date('1990-10-17'),
+            'fecha_creacion' => date('Y-m-d'),
             'genero'=>'Masculino'
         ]);
     }

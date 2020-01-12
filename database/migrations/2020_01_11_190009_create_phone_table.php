@@ -13,13 +13,13 @@ class CreatePhoneTable extends Migration
      */
     public function up()
     {
-        Schema::create('telefono', function (Blueprint $table) {
-            $table->bigIncrements('idTelefono');
+        Schema::create('telefonos', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->unsignedInteger('idContacto');
             $table->string('numero_de_telefono', 8);
             $table->string('categoria', 40);
-            $table->integer('deleted', 0);
-            $table->foreign('idContacto')->references('idContacto')->on('contacto');
+            $table->integer('deleted')->default(0);
+            $table->foreign('idContacto')->references('id')->on('contactos');
             $table->timestamps();
         });
     }

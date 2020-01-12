@@ -13,13 +13,13 @@ class CreateEmailTable extends Migration
      */
     public function up()
     {
-        Schema::create('email', function (Blueprint $table) {
-            $table->bigIncrements('idEmail');
+        Schema::create('emails', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->unsignedInteger('idContacto');
             $table->string('correo', 100);
             $table->string('categoria', 40);
             $table->integer('deleted')->default(0);
-            $table->foreign('idContacto')->references('idContacto')->on('contacto');
+            $table->foreign('idContacto')->references('id')->on('contactos');
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ class CreateEmailTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('email');
+        Schema::dropIfExists('emails');
     }
 }

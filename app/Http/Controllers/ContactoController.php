@@ -15,7 +15,7 @@ class ContactoController extends Controller
     public function index()
     {
         //
-        $contactos=Contacto::where('deleted', 0)->get();
+        $contactos=Contacto::where('deleted', 0)->with('telefonos')->with('correos')->get();
         return $contactos;
     }
 

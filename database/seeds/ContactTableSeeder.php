@@ -18,7 +18,6 @@ class ContactTableSeeder extends Seeder
             'apellido'=>'Hernandez',
             'apodo'=>'Cris',
             'fecha_nac'=>date('1990-10-17'),
-            'fecha_creacion' => date('Y-m-d'),
             'genero'=>'Masculino'
         ]);
     }

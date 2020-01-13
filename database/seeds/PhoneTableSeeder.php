@@ -14,7 +14,7 @@ class PhoneTableSeeder extends Seeder
     {
         // Teléfono de prueba para verificación de la información
         DB::table('telefonos')->insert([
-            'idContacto' => 1,
+            'contacto_id' => 1,
             'numero_de_telefono' => '41585285',
             'categoria' => 'Móvil'
         ]);

@@ -15,11 +15,11 @@ class CreatePhoneTable extends Migration
     {
         Schema::create('telefonos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedInteger('idContacto');
+            $table->unsignedInteger('contacto_id');
             $table->string('numero_de_telefono', 8);
             $table->string('categoria', 40);
             $table->integer('deleted')->default(0);
-            $table->foreign('idContacto')->references('id')->on('contactos');
+            $table->foreign('contacto_id')->references('id')->on('contactos');
             $table->timestamps();
         });
     }

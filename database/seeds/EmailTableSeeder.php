@@ -13,7 +13,7 @@ class EmailTableSeeder extends Seeder
     {
         // Correo de prueba para verificación de la información
         DB::table('emails')->insert([
-            'idContacto' => 1,
+            'contacto_id' => 1,
             'correo' => 'obrian.hc@gmail.com',
             'categoria' => 'Personal'
         ]);

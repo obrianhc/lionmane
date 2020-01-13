@@ -21,8 +21,6 @@ class CreateContactTable extends Migration
             $table->date('fecha_nac');
             $table->string('genero', 10);
             $table->binary('imagen')->nullable();
-            $table->date('fecha_creacion');
-            $table->date('fecha_actualizacion')->nullable();
             $table->integer('deleted')->default(0);
             $table->timestamps();
         });

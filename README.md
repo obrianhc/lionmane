@@ -15,5 +15,5 @@ Este proyecto basado en laravel, bootstrap y jquery es una pequeña muestra de l
 - GIT
 - Composer
 - PHP
-- MySQL
+- MySQL (Una base de datos llamada agenda)
 - Una instalación de XAMPP es aceptable

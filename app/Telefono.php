@@ -8,7 +8,7 @@ use App\Contacto;
 class Telefono extends Model
 {
     public $timestamps = true;
-    protected $fillable = ['numero_de_telefono', 'categoria', 'deleted'];
+    protected $fillable = ['contacto_id', 'numero_de_telefono', 'categoria', 'deleted'];
 
     public function contacto(){
         return $this->belongsTo(Contacto::class);

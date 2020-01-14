@@ -43,7 +43,7 @@ class TelefonoController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,['numero_de_telefono'=>'required', 'categoria'=>'required']);
+        $this->validate($request,['contacto_id'=>'required', 'numero_de_telefono'=>'required', 'categoria'=>'required']);
         return Telefono::create($request->all());
     }
 

@@ -41,7 +41,7 @@ class EmailController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,['correo'=>'required', 'categoria'=>'required']);
+        $this->validate($request,['contacto_id'=>'required', 'correo'=>'required', 'categoria'=>'required']);
         return Email::create($request->all());
     }
 

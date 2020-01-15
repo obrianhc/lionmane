@@ -19,7 +19,25 @@ $(function(){
 
     $('#contactos tbody').on('click', 'tr', function(){
             var data = tabla.row(this).data();
-            console.log(data.DT_RowId);
+            $('#contactModal').modal('toggle');
+
+            $.ajax({
+                url: url+"/api/getContact/"+data.DT_RowId,
+                type: 'get',
+                dataType: 'json',
+                contentType: 'application/x-www-form-urlencoded',
+                success: function(data){
+                    $('#ModalLabelContacto').text(data.apellido+', '+data.nombre);
+                    $('#nombre_contacto').val(data.nombre);
+                    $('#apellido_contacto').val(data.apellido);
+                    $('#apodo_contacto').val(data.apodo);
+                    $('#fecha_nac_contacto').val(data.fecha_nac);
+                    $('#genero_contacto').val(data.genero);
+                },
+                error: function(data){
+                    show_message('Ha ocurrido un error.');
+                }
+            })
         }
     );
 });
@@ -86,8 +104,8 @@ function load_contacts(){
                     apellido: response[x].apellido,
                     apodo: response[x].apodo,
                     cumpleanos: response[x].fecha_nac,
-                    correo: (response[x].correos.length>0?response[x].correos[0].correo:null),
-                    telefono: (response[x].telefonos.length>0?response[x].telefonos[0].numero_de_telefono:null),
+                    correo: (response[x].correos.length>0?response[x].correos[0].correo:"").substring(0,17),
+                    telefono: (response[x].telefonos.length>0?response[x].telefonos[0].numero_de_telefono:""),
                 });
             }
             tabla.draw();

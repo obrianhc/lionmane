@@ -111,4 +111,49 @@ Agenda
             </div>
         </div>
     </div>
+
+
+<!-- Modal para verificaión y edición de la información de contacto -->
+    <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabelContacto" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalLabelContacto"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Nombre:</label>
+                        <input type="text" id="nombre_contacto" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Apellido:</label>
+                        <input type="text" id="apellido_contacto" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Apodo:</label>
+                        <input type="text" id="apodo_contacto" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Género:</label>
+                        <select class="form-control" id="genero_contacto">
+                            <option></option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Femenino">Femenino</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Fecha de nacimiento</label>
+                        <input type="date" id="fecha_nac_contacto" class="form-control">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
